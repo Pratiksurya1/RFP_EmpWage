@@ -10,23 +10,26 @@ namespace RFP_EmpWage
     {
         public static void Main(String[] args)
         {
-            Uc6 uc6 = new Uc6();
-            uc6.EmpMonthlyWage();
+            EmpWageCalculatot Tata = new EmpWageCalculatot("tata", 100, 20, 30);
+            Tata.EmpMonthlyWage();
 
-            Uc5 uc5 = new Uc5();
-            uc5.EmpMonthlyWage();
+            //Uc6 uc6 = new Uc6();
+            //uc6.EmpMonthlyWage();
 
-            Uc4 uc4 = new Uc4();
-            uc4.EmpWage();
+            //Uc5 uc5 = new Uc5();
+            //uc5.EmpMonthlyWage();
 
-            Uc3 uc3 = new Uc3();
-            uc3.EmpWage();
+            //Uc4 uc4 = new Uc4();
+            //uc4.EmpWage();
 
-            Uc2 uc2 = new Uc2();
-            uc2.CalculateWage();
+            //Uc3 uc3 = new Uc3();
+            //uc3.EmpWage();
 
-            Uc1 uc1 = new Uc1();
-            uc1.Attendance();
+            //Uc2 uc2 = new Uc2();
+            //uc2.CalculateWage();
+
+            //Uc1 uc1 = new Uc1();
+            //uc1.Attendance();
         }
     }
 }

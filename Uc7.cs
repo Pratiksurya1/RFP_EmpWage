@@ -8,11 +8,11 @@ namespace RFP_EmpWage
 {
     internal class Uc7
     {
-        static int empRatePerHr = 20;
-        static int empWorkHr = 0;
-        static int empWorkDay = 0;
-        static int empTotalSalary;
-        static int totalWorkhr = 0;
+         int empRatePerHr = 20;
+         int empWorkHr = 0;
+         int empWorkDay = 0;
+         int empTotalSalary;
+         int totalWorkhr = 0;
 
         public void EmpMonthlyWage()
         {
@@ -36,11 +36,12 @@ namespace RFP_EmpWage
                         empWorkHr = 0;
                         SalaryCaount(empWorkHr);
                         break;
+                       
                 }
             }
             Console.WriteLine("Emp Total Wage is " + empTotalSalary);
         }
-        public static void SalaryCaount(int empWorkHr)
+        public void SalaryCaount(int empWorkHr)
         {
             totalWorkhr = totalWorkhr + empWorkHr;
             empTotalSalary = totalWorkhr * empRatePerHr;
