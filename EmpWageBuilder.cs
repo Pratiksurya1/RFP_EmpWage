@@ -60,11 +60,11 @@ namespace RFP_EmpWage
                         break;
 
                 }
-                totalWorkhr = totalWorkhr + empWorkHr;
-                Console.WriteLine("Day : "+ totalEmpWorkDay+" Employee hrs : "+empWorkHr);
+                totalWorkhr += empWorkHr;
+                int dailyWage= empWorkHr*empWageCalculator.empRatePerHr;
+                Console.WriteLine("Daily Wage : "+dailyWage);
             }
-                
-                return totalWorkhr * empWageCalculator.empRatePerHr;
+            return totalWorkhr * empWageCalculator.empRatePerHr;
          
         }
     }
