@@ -6,54 +6,25 @@ using System.Threading.Tasks;
 
 namespace RFP_EmpWage
 {
-    internal class EmpWageCalculatot
+    public class EmpWageCalculator
     {
-        int empRatePerHr = 20;
-        int empMaxWorkingHr;
-        int empMaxWorkingDay;
-        String Company;
-        int empTotalWage;
+       public int empRatePerHr = 20;
+       public int empMaxWorkingHr;
+       public int empMaxWorkingDay;
+       public String Company;
+       public int empTotalWage;
 
-        public EmpWageCalculatot(String company, int empMaxWorkingHr, int empMaxWorkingDay, int empRatePerHr)
+        public EmpWageCalculator(String Company, int empRatePerHr, int empMaxWorkingDay, int empMaxWorkingHr)
         {
-            this.Company = company;
+            this.Company = Company;
             this.empMaxWorkingDay = empMaxWorkingDay;
             this.empMaxWorkingHr = empMaxWorkingHr;
-            this.empRatePerHr = empRatePerHr;                                       
+            this.empRatePerHr = empRatePerHr;
         }
-        public void EmpMonthlyWage()
+        public int setTotalWage(int totalWage)
         {
-            int empWorkHr = 0;
-            int totalEmpWorkDay = 0;
-            int totalWorkhr = 0;
-            while (empWorkHr < empMaxWorkingHr && totalEmpWorkDay < empMaxWorkingDay)
-            {
-                Random random = new Random();
-                int workType = random.Next(0,3);
-                totalEmpWorkDay++;
-
-                switch (workType)
-                {
-                    case 1:
-                        empWorkHr = 8;
-                        break;
-
-                    case 2:
-                        empWorkHr = 4;
-                       break;
-
-                    default:
-                        empWorkHr = 0;
-                        break;
-
-                }
-                totalWorkhr = totalWorkhr + empWorkHr;
-                Console.WriteLine("Day : "+ totalEmpWorkDay+" Employee hrs : "+empWorkHr);
-            }
-           
-                empTotalWage = totalWorkhr * empRatePerHr;
-            Console.WriteLine("Emp Total Wage for "+Company+" Company : " + empTotalWage);
-        
+            this.empTotalWage = totalWage;
+            return this.empTotalWage;
         }
         public String toString()
         {
