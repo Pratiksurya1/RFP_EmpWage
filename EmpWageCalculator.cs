@@ -12,6 +12,7 @@ namespace RFP_EmpWage
         int empMaxWorkingHr;
         int empMaxWorkingDay;
         String Company;
+        int empTotalWage;
 
         public EmpWageCalculatot(String company, int empMaxWorkingHr, int empMaxWorkingDay, int empRatePerHr)
         {
@@ -23,14 +24,14 @@ namespace RFP_EmpWage
         public void EmpMonthlyWage()
         {
             int empWorkHr = 0;
-            int empWorkDay = 0;
+            int totalEmpWorkDay = 0;
             int totalWorkhr = 0;
-            int empTotalSalary;
-            while (empWorkHr < empMaxWorkingHr && empWorkDay < empMaxWorkingDay)
+           // int empTotalSalary;
+            while (empWorkHr < empMaxWorkingHr && totalEmpWorkDay < empMaxWorkingDay)
             {
                 Random random = new Random();
                 int workType = random.Next(0,3);
-                empWorkDay++;
+                totalEmpWorkDay++;
 
                 switch (workType)
                 {
@@ -48,10 +49,16 @@ namespace RFP_EmpWage
 
                 }
                 totalWorkhr = totalWorkhr + empWorkHr;
+                Console.WriteLine("Day : "+ totalEmpWorkDay+" Employee hrs : "+empWorkHr);
             }
            
-            empTotalSalary = totalWorkhr * empRatePerHr;
-            Console.WriteLine("Emp Total Wage for "+Company+" Company : " + empTotalSalary);
+                empTotalWage = totalWorkhr * empRatePerHr;
+            Console.WriteLine("Emp Total Wage for "+Company+" Company : " + empTotalWage);
+        
+        }
+        public String toString()
+        {
+            return "Emp Total Wage for " + this.Company + " Company : " + this.empTotalWage;
         }
     }
 }

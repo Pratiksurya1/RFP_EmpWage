@@ -12,6 +12,7 @@ namespace RFP_EmpWage
         {
             EmpWageCalculatot Tata = new EmpWageCalculatot("tata", 100, 20, 30);
             Tata.EmpMonthlyWage();
+            Console.WriteLine(Tata.ToString());
 
             //Uc6 uc6 = new Uc6();
             //uc6.EmpMonthlyWage();
