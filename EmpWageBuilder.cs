@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RFP_EmpWage
 {
-    internal class EmpWageBuilder
+    internal class EmpWageBuilder : IWageComput
     {
         private EmpWageCalculator[] CompanyEmpWageArray;
         int numOfCompany = 0;
