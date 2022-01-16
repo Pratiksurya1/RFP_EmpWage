@@ -8,26 +8,30 @@ namespace RFP_EmpWage
 {
     internal class EmpWageBuilder : IWageComput
     {
+        LinkedList<EmpWageCalculator> companyWageList;
         private EmpWageCalculator[] CompanyEmpWageArray;
         int numOfCompany = 0;
         public EmpWageBuilder()
         {
-            CompanyEmpWageArray = new EmpWageCalculator[7];
+            this.companyWageList = new LinkedList<EmpWageCalculator>();
+           // CompanyEmpWageArray = new EmpWageCalculator[7];
         }
        
         public void SetCompanyWage(String Company, int empRatePerHr,int empMaxWorkingDay, int empMaxWorkingHr)
         {
-            CompanyEmpWageArray[numOfCompany] = new EmpWageCalculator(Company, empRatePerHr, empMaxWorkingDay, empMaxWorkingHr);
+            EmpWageCalculator empWageCalculator = new EmpWageCalculator(Company, empRatePerHr, empMaxWorkingDay, empMaxWorkingHr);
+          this.companyWageList.AddLast(empWageCalculator);
             numOfCompany++;
         }
 
         public void EmpMonthlyWage()
         {
-            for (int i = 0; i < numOfCompany; i++)
+            foreach(EmpWageCalculator empWageCalculator in this.companyWageList)
+           // for (int i = 0; i < numOfCompany; i++)
             {
 
-                CompanyEmpWageArray[i].setTotalWage(this.EmpMonthlyWageCalculator(this.CompanyEmpWageArray[i]));
-                Console.WriteLine(" Emp Total Wage for " + CompanyEmpWageArray[i].Company + " Company : " + CompanyEmpWageArray[i].empTotalWage);
+                empWageCalculator.setTotalWage(this.EmpMonthlyWageCalculator(empWageCalculator));
+                Console.WriteLine(empWageCalculator.toString());
             }
         }
         private int EmpMonthlyWageCalculator(EmpWageCalculator empWageCalculator)
