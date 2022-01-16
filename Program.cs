@@ -14,6 +14,7 @@ namespace RFP_EmpWage
             addCompany.SetCompanyWage("Tata",28,3,40);
             addCompany.SetCompanyWage("Ford",18,4, 30);
             addCompany.EmpMonthlyWage();
+            Console.WriteLine("Total wage tata company : " + addCompany.totalWage("Tata"));
 
            // Console.WriteLine(addCompany.ToString());
 

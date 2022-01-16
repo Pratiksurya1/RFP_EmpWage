@@ -8,12 +8,15 @@ namespace RFP_EmpWage
 {
     internal class EmpWageBuilder : IWageComput
     {
-        LinkedList<EmpWageCalculator> companyWageList;
+        private LinkedList<EmpWageCalculator> companyWageList;
+        private Dictionary<string, EmpWageCalculator> ComppanyEmpWageDic;
         private EmpWageCalculator[] CompanyEmpWageArray;
         int numOfCompany = 0;
+        int dailyWage;
         public EmpWageBuilder()
         {
             this.companyWageList = new LinkedList<EmpWageCalculator>();
+            this.ComppanyEmpWageDic = new Dictionary<string,EmpWageCalculator>();
            // CompanyEmpWageArray = new EmpWageCalculator[7];
         }
        
@@ -21,6 +24,7 @@ namespace RFP_EmpWage
         {
             EmpWageCalculator empWageCalculator = new EmpWageCalculator(Company, empRatePerHr, empMaxWorkingDay, empMaxWorkingHr);
           this.companyWageList.AddLast(empWageCalculator);
+            this.ComppanyEmpWageDic.Add(Company, empWageCalculator);
             numOfCompany++;
         }
 
@@ -61,11 +65,15 @@ namespace RFP_EmpWage
 
                 }
                 totalWorkhr += empWorkHr;
-                int dailyWage= empWorkHr*empWageCalculator.empRatePerHr;
+                dailyWage= empWorkHr*empWageCalculator.empRatePerHr;
                 Console.WriteLine("Daily Wage : "+dailyWage);
             }
             return totalWorkhr * empWageCalculator.empRatePerHr;
          
+        }
+            public int totalWage(String Company)
+        {
+           return _ = this.ComppanyEmpWageDic[Company].empTotalWage;
         }
     }
 }
