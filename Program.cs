@@ -10,7 +10,7 @@ namespace RFP_EmpWage
     {
         public static void Main(String[] args)
         {
-            EmpWageCalculatot Tata = new EmpWageCalculatot("tata", 100, 20, 30);
+            EmpWageCalculatot Tata = new EmpWageCalculatot("Tata", 100, 20, 30);
             Tata.EmpMonthlyWage();
             Console.WriteLine(Tata.ToString());
 

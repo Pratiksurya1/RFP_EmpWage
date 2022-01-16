@@ -26,7 +26,6 @@ namespace RFP_EmpWage
             int empWorkHr = 0;
             int totalEmpWorkDay = 0;
             int totalWorkhr = 0;
-           // int empTotalSalary;
             while (empWorkHr < empMaxWorkingHr && totalEmpWorkDay < empMaxWorkingDay)
             {
                 Random random = new Random();
